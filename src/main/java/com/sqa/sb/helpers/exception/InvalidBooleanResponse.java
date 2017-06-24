@@ -8,7 +8,7 @@
  *   
  */
 
-package com.sqa.jf.helpers;
+package com.sqa.sb.helpers.exception;
 
 /**
  * InvalidBooleanResponse //ADDD (description of class)

@@ -8,7 +8,7 @@
  *   
  */
 
-package com.sqa.jf.helpers.exception;
+package com.sqa.sb.helpers.exception;
 
 /**
  * InvalidCharResponseLength //ADDD (description of class)

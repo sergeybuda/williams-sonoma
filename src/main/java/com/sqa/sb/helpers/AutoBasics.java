@@ -1,6 +1,8 @@
 package com.sqa.sb.helpers;
 
 import java.io.*;
+import java.util.*;
+import java.util.NoSuchElementException;
 
 import org.apache.commons.io.*;
 import org.apache.log4j.*;
@@ -27,5 +29,19 @@ public class AutoBasics {
 			logger.warn("Screenshot " + fileName + " was not captured to disk correctly.");
 			return false;
 		}
+	}
+
+	public static String getProp(String propName, String fileLocation, String fileName, Logger logger) {
+		Properties props = new Properties();
+		InputStream input;
+		try {
+			input = new FileInputStream(fileLocation + fileName);
+			props.load(input);
+		} catch (FileNotFoundException e) {
+			logger.warn("Can not load config properties file because it was not found: " + fileName);
+		} catch (IOException e) {
+			logger.warn("Can not load config properties file can not be read: " + fileName);
+		}
+		return props.getProperty(propName);
 	}
 }

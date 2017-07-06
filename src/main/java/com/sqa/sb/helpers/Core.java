@@ -3,7 +3,6 @@ package com.sqa.sb.helpers;
 import org.apache.log4j.*;
 import org.openqa.selenium.*;
 
-import com.sqa.sb.adactin.*;
 import com.sqa.sb.auto.*;
 
 public class Core {
@@ -76,5 +75,9 @@ public class Core {
 	 */
 	protected void setDriver(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public String getProp(String propName) {
+		return AutoBasics.getProp(propName, "src/main/resources/", "config.properties", getLog());
 	}
 }
